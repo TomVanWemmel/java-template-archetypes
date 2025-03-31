@@ -5,16 +5,29 @@
 
     <parent>
         <groupId>${groupId}</groupId>
-        <artifactId>${artifactId}</artifactId>
+        <artifactId>${rootArtifactId}-parent</artifactId>
         <version>${version}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>${artifactId}-persistence</artifactId>
-    <name>${artifactId}-persistence</name>
-    <description>Persistence module for ${artifactId}</description>
+    <artifactId>${rootArtifactId}-app</artifactId>
+    <name>${rootArtifactId}-app</name>
+    <description>Application module with main class for ${rootArtifactId}</description>
 
     <dependencies>
-        <!-- Add your persistence dependencies here -->
+        <!-- Internal dependencies -->
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-persistence</artifactId>
+        </dependency>
 
         <!-- Test dependencies -->
         <dependency>
@@ -28,4 +41,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+    </build>
 </project>

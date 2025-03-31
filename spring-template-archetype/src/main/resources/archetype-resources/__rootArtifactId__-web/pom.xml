@@ -5,19 +5,20 @@
 
     <parent>
         <groupId>${groupId}</groupId>
-        <artifactId>${artifactId}</artifactId>
+        <artifactId>${rootArtifactId}-parent</artifactId>
         <version>${version}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>${artifactId}-service</artifactId>
-    <name>${artifactId}-service</name>
-    <description>Service module for ${artifactId}</description>
+    <artifactId>${rootArtifactId}-web</artifactId>
+    <name>${rootArtifactId}-web</name>
+    <description>Web module for ${rootArtifactId}</description>
 
     <dependencies>
         <!-- Internal dependencies -->
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>${artifactId}-persistence</artifactId>
+            <artifactId>${rootArtifactId}-service</artifactId>
         </dependency>
 
         <!-- Test dependencies -->
@@ -32,4 +33,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+    </build>
 </project>

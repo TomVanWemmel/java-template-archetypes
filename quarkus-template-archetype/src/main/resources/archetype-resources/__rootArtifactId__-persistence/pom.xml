@@ -5,20 +5,17 @@
 
     <parent>
         <groupId>${groupId}</groupId>
-        <artifactId>${artifactId}</artifactId>
+        <artifactId>${rootArtifactId}-parent</artifactId>
         <version>${version}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>${artifactId}-web</artifactId>
-    <name>${artifactId}-web</name>
-    <description>Web module for ${artifactId}</description>
+    <artifactId>${rootArtifactId}-persistence</artifactId>
+    <name>${rootArtifactId}-persistence</name>
+    <description>Persistence module for ${rootArtifactId}</description>
 
     <dependencies>
-        <!-- Internal dependencies -->
-        <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>${artifactId}-service</artifactId>
-        </dependency>
+        <!-- Add your persistence dependencies here -->
 
         <!-- Test dependencies -->
         <dependency>
@@ -32,7 +29,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <build>
-    </build>
 </project>
