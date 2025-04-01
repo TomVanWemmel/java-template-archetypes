@@ -6,7 +6,6 @@ import ${package}.entity.UserEntity;
 import io.quarkus.hibernate.orm.panache.PanacheRepositoryBase;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.transaction.Transactional;
 
 import java.util.Optional;
 import java.util.stream.StreamSupport;
@@ -35,7 +34,6 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    @Transactional
     public UserData save(UserData userData) {
         if (userData instanceof UserEntity) {
             UserEntity entity = (UserEntity) userData;
