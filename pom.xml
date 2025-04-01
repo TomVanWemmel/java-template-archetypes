@@ -23,13 +23,36 @@
   </properties>
 
   <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>3.3.0</version>
+      </extension>
+    </extensions>
     <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-archetype-plugin</artifactId>
           <version>3.3.0</version>
+          <configuration>
+            <ignoreEOLStyle>true</ignoreEOLStyle>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-archetype-plugin</artifactId>
+        <configuration>
+          <ignoreEOLStyle>true</ignoreEOLStyle>
+          <postBuildHookScript>verify</postBuildHookScript>
+          <goals>
+            <goal>clean</goal>
+            <goal>verify</goal>
+          </goals>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

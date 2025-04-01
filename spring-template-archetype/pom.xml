@@ -15,22 +15,4 @@
   <name>Spring Multi-Module Template Archetype</name>
   <description>Maven archetype for a Spring application with Web, Service, and Persistence modules</description>
 
-  <build>
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.archetype</groupId>
-        <artifactId>archetype-packaging</artifactId>
-        <version>3.3.0</version>
-      </extension>
-    </extensions>
-
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-archetype-plugin</artifactId>
-          <version>3.3.0</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
 </project>

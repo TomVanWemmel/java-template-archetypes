@@ -8,7 +8,7 @@
     <version>${version}</version>
     <packaging>pom</packaging>
     <name>${artifactId}-parent</name>
-    <description>Multi-module Java application</description>
+    <description>${appName}</description>
 
     <modules>
         <module>${artifactId}-web</module>
@@ -21,7 +21,7 @@
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <quarkus.version>3.8.1</quarkus.version>
+        <quarkus.version>${quarkusVersion}</quarkus.version>
         <junit-bom.version>5.12.0</junit-bom.version>
         <assertj-bom.version>3.25.3</assertj-bom.version>
     </properties>

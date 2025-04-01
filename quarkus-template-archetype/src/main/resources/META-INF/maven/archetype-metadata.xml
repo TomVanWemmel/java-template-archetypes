@@ -15,6 +15,15 @@
         </fileSet>
     </fileSets>
 
+    <requiredProperties>
+        <requiredProperty key="appName">
+            <defaultValue>Application</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="quarkusVersion">
+            <defaultValue>3.20.0</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
     <modules>
         <module id="${rootArtifactId}-web" dir="__rootArtifactId__-web" name="${rootArtifactId}-web">
             <fileSets>
