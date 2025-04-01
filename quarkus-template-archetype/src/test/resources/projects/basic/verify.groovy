@@ -1,18 +1,21 @@
 import java.io.File
 
-// Verify that the project was generated correctly
-assert new File(basedir, "project/test-project").exists()
-assert new File(basedir, "project/test-project/pom.xml").exists()
-assert new File(basedir, "project/test-project/test-project-app").exists()
-assert new File(basedir, "project/test-project/test-project-web").exists()
-assert new File(basedir, "project/test-project/test-project-service").exists()
-assert new File(basedir, "project/test-project/test-project-persistence").exists()
+def fileNames = [
+        "pom.xml",
+        "test-project-app",
+        "test-project-web",
+        "test-project-service",
+        "test-project-persistence",
+        "test-project-app/pom.xml",
+        "test-project-web/pom.xml",
+        "test-project-service/pom.xml",
+        "test-project-persistence/pom.xml"
+]
 
-// Verify that the pom.xml files were generated correctly
-assert new File(basedir, "project/test-project/test-project-app/pom.xml").exists()
-assert new File(basedir, "project/test-project/test-project-web/pom.xml").exists()
-assert new File(basedir, "project/test-project/test-project-service/pom.xml").exists()
-assert new File(basedir, "project/test-project/test-project-persistence/pom.xml").exists()
+fileNames.each { fileName ->
+    def file = new File(context.projectDir, fileName);
+    assert file.exists() : "File ${file} does not exist"
+}
 
 // Verify that the project builds correctly
 def buildLog = new File(basedir, "project/test-project/build.log").text

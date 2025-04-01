@@ -15,7 +15,15 @@
     <description>Persistence module for ${rootArtifactId}</description>
 
     <dependencies>
-        <!-- Add your persistence dependencies here -->
+        <!-- Persistence dependencies -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-orm-panache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-jdbc-h2</artifactId>
+        </dependency>
 
         <!-- Test dependencies -->
         <dependency>
